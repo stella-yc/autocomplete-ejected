@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 
 import promiseJSONP from './utils/JSONPUtil';
 import generateSearchUrl from './utils/searchUrl';
-import { firstTenArray } from './utils/arrayUtil';
+import { firstTenElements, uniqueVals } from './utils/arrayUtil';
 import SearchResult from './SearchResult';
 
 class SearchBar extends Component {
@@ -23,12 +23,11 @@ class SearchBar extends Component {
   }
 
   retrieveResults () {
-    const { typedValue } = this.state;
-    const api = generateSearchUrl(typedValue);
-
+    const api = generateSearchUrl(this.state.typedValue);
     promiseJSONP(api)
       .then(data => {
-        const results = firstTenArray(data.results);
+        const uniqueResults = uniqueVals(data.results)
+        const results = firstTenElements(uniqueResults);
         this.setState({results});
       })
       .catch(err => console.log(err));
