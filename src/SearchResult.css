@@ -1,18 +1,27 @@
 .SearchResult {
-  padding: 1em 0 0 0;
-}
-
-.SearchResult-selected {
-  background-color: pink;
-}
-
-.SearchResult:hover {
-  background-color: pink;
+  padding: 0.7em 1em;
+  width: 100%;
 }
 
 .SearchResult > a {
-  color: black;
   text-decoration: none;
+  color: black;
+}
+
+.SearchResult-selected {
+  background-color: #2e9adf;
+}
+
+.SearchResult-selected > a {
+  color: white;
+}
+
+.SearchResult:hover {
+  background-color: #2e9adf;
+}
+
+.SearchResult:hover > a {
+  color: white;
 }
 
 .SearchResult span {
