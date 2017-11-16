@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import './SearchBar.css';
+import './SearchBar.css';
 
 import promiseJSONP from './utils/JSONPUtil';
 import generateSearchUrl from './utils/searchUrl';
@@ -10,14 +10,16 @@ class SearchBar extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      selected: 0,
       typedValue: '',
       results: []
     };
-    this.handleChange = this.handleChange.bind(this);
+    this.handleInputChange = this.handleInputChange.bind(this);
     this.retrieveResults = this.retrieveResults.bind(this);
+    this.handleKeyDown = this.handleKeyDown.bind(this);
   }
 
-  handleChange (event) {
+  handleInputChange (event) {
     const typedValue = event.target.value;
     this.setState({ typedValue }, () => this.retrieveResults());
   }
@@ -33,22 +35,45 @@ class SearchBar extends Component {
       .catch(err => console.log(err));
   }
 
+  handleKeyDown (event) {
+    const { selected, results } = this.state;
+    // if up arrow key pressed
+    if (event.keyCode === 38 && selected > 0) {
+      console.log('up');
+      this.setState((prevState =>
+        ({ selected: prevState.selected - 1 })
+      ));
+    }
+    // if down arrow key pressed
+    if (event.keyCode === 40 && selected <= results.length) {
+      console.log('down');
+      this.setState((prevState =>
+      ({ selected: prevState.selected + 1 })
+    ));
+    }
+  }
+
   render() {
+    const { selected, typedValue, results } = this.state;
     return (
       <div className="Searchbar-container">
         <input
+          className="Searchbar-input"
           type="text"
           placeholder="Enter a college or university..."
-          onChange={this.handleChange}
-          value={this.state.typedValue}
+          onChange={this.handleInputChange}
+          value={typedValue}
+          onKeyDown={this.handleKeyDown}
         />
         <ul className="Searchbar-results">
           {
-            this.state.results.map(result =>
+            results.map((result, idx) =>
               <SearchResult
+
+                selected={selected === (idx + 1)}
                 key={result.id}
                 result={result}
-                typedValue={this.state.typedValue}
+                typedValue={typedValue}
               />
             )
           }
