@@ -59,28 +59,37 @@ class SearchBar extends Component {
   render () {
     const { selected, typedValue, results, navigateToSelected } = this.state;
     return (
-      <div className="Searchbar-container">
-        <input
-          className="Searchbar-input"
-          type="text"
-          placeholder="Enter a college or university..."
-          onChange={this.handleInputChange}
-          value={typedValue}
-          onKeyDown={this.handleKeyDown}
-        />
-        <ul className="Searchbar-results">
-          {
-            results.map((result, idx) =>
-              <SearchResult
-                goToLink={navigateToSelected}
-                selected={selected === (idx + 1)}
-                key={result.id}
-                result={result}
-                typedValue={typedValue}
-              />
-            )
-          }
-        </ul>
+      <div className="Searchbar-component">
+        <div className="Searchbar-container">
+          <input
+            className="Searchbar-input"
+            type="text"
+            placeholder="Enter a college or university..."
+            onChange={this.handleInputChange}
+            value={typedValue}
+            onKeyDown={this.handleKeyDown}
+          />
+          <span className="Searchbar-icon">
+            <i className="fa fa-search" aria-hidden="true"></i>
+          </span>
+        </div>
+        {
+          !results.length
+            ? null
+            : <ul className="Searchbar-results">
+              {
+                results.map((result, idx) =>
+                  <SearchResult
+                    goToLink={navigateToSelected}
+                    selected={selected === (idx + 1)}
+                    key={result.id}
+                    result={result}
+                    typedValue={typedValue}
+                  />
+                )
+              }
+            </ul>
+        }
       </div>
     );
   }
