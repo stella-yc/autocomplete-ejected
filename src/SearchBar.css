@@ -1,0 +1,18 @@
+.Searchbar-container {
+  color: black;
+}
+
+.Searchbar-input {
+  width: 80%;
+  height: 2em;
+  padding: 0 0.5em;
+}
+
+.Searchbar-results {
+  list-style-type: none;
+  text-align: left;
+}
+
+.SearchResult-selected {
+  background-color: pink;
+}

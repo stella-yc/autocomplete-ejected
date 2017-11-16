@@ -1,0 +1,20 @@
+.SearchResult {
+  padding: 1em 0 0 0;
+}
+
+.SearchResult-selected {
+  background-color: pink;
+}
+
+.SearchResult:hover {
+  background-color: pink;
+}
+
+.SearchResult > a {
+  color: black;
+  text-decoration: none;
+}
+
+.SearchResult span {
+  display: block;
+}
