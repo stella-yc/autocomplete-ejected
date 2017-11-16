@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-// import './SearchResult.css';
+import './SearchResult.css';
 
 const SearchResult = (props) => {
-  const { typedValue, result } = props;
+  const { typedValue, result, selected } = props;
   const { name, url, location, id } = result;
 
   const substringIdx = (sub, text) => {
@@ -32,7 +32,7 @@ const SearchResult = (props) => {
   };
 
     return (
-      <li>
+      <li className={`SearchResult ${selected ? 'SearchResult-selected' : ''}`}>
         <a href={url} >
           { boldMatchingText(typedValue, name) }
           <small>{location}</small>
