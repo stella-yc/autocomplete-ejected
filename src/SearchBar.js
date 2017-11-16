@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 // import './SearchBar.css';
 
-import JSONP from 'jsonp';
+import promiseJSONP from './utils/JSONPUtil';
 import generateSearchUrl from './utils/searchUrl';
+import { firstTenArray } from './utils/arrayUtil';
 import SearchResult from './SearchResult';
 
 class SearchBar extends Component {
@@ -13,6 +14,7 @@ class SearchBar extends Component {
       results: []
     };
     this.handleChange = this.handleChange.bind(this);
+    this.retrieveResults = this.retrieveResults.bind(this);
   }
 
   handleChange (event) {
@@ -23,24 +25,13 @@ class SearchBar extends Component {
   retrieveResults () {
     const { typedValue } = this.state;
     const api = generateSearchUrl(typedValue);
-    JSONP(api, (error, data) => {
-      if (error) {
-        console.error(error);
-      } else {
-        console.log(data);
-        let results;
-        if (data.results.length > 10) {
-          results = [];
-          for (let i = 0; i < 10; i++) {
-            results.push(data.results[i]);
-          }
-        } else {
-          results = data.results;
-        }
-        this.setState({results});
-      }
 
-    });
+    promiseJSONP(api)
+      .then(data => {
+        const results = firstTenArray(data.results);
+        this.setState({results});
+      })
+      .catch(err => console.log(err));
   }
 
   render() {
@@ -56,6 +47,7 @@ class SearchBar extends Component {
           {
             this.state.results.map(result =>
               <SearchResult
+                key={result.id}
                 result={result}
                 typedValue={this.state.typedValue}
               />
