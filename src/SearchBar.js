@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import './SearchBar.css';
+import './SearchBarV1.css';
+import './SearchBarV2.css';
 
 import promiseJSONP from './utils/JSONPUtil';
 import generateSearchUrl from './utils/searchUrl';
@@ -58,8 +59,9 @@ class SearchBar extends Component {
 
   render () {
     const { selected, typedValue, results, navigateToSelected } = this.state;
+    const { style } = this.props;
     return (
-      <div className="Searchbar-component">
+      <div className={`Searchbar-component`}>
         <div className="Searchbar-container">
           <input
             className="Searchbar-input"
@@ -69,7 +71,7 @@ class SearchBar extends Component {
             value={typedValue}
             onKeyDown={this.handleKeyDown}
           />
-          <span className="Searchbar-icon">
+          <span className={`Searchbar-icon-${style}`}>
             <i className="fa fa-search" aria-hidden="true"></i>
           </span>
         </div>

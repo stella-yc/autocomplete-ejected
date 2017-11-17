@@ -30,7 +30,7 @@
   outline: none;
 }
 
-.Searchbar-icon {
+.Searchbar-icon-v1 {
   background-color: #53a63a;
   color: white;
   height: 100%;
@@ -39,7 +39,7 @@
   border: none;
 }
 
-.Searchbar-icon > i {
+.Searchbar-icon-v1 > i {
   padding: 10% 0;
 }
 
