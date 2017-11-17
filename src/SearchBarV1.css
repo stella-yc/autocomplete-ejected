@@ -41,10 +41,6 @@
   cursor: pointer;
 }
 
-.Searchbar-icon-v1:hover {
-  cursor: hand;
-}
-
 .Searchbar-icon-v1 > i {
   padding: 10% 0;
 }
