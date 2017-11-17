@@ -1,13 +1,13 @@
-.Searchbar-component {
+.Searchbar-component-v2 {
   color: black;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Heebo', sans-serif;
   border: none;
 }
 
-.Searchbar-container {
-  border-radius: 50px;
-  border: none;
-  height: 2.5em;
+.Searchbar-container-v2 {
+  border-radius: 5px;
+  border: 1px solid white;
+  height: 3em;
   width: 90%;
   margin: 0 auto;
   display: flex;
@@ -15,43 +15,40 @@
   justify-content: space-between;
   overflow: hidden;
   box-shadow: 0px 3px 20px 4px rgba(53, 53, 53, 0.1);
-  background-color: white;
 }
 
-.Searchbar-input {
+.Searchbar-input-v2 {
   width: 80%;
   height: 100%;
   font-size: 1.1em;
   border: none;
   margin-left: 2em;
+  color: white;
+  background-color: #989898;
+  font-family: 'Heebo', sans-serif;
 }
 
-.Searchbar-input:focus {
+.Searchbar-input-v2:focus {
   outline: none;
 }
 
 .Searchbar-icon-v2 {
-  background-color: pink;
   color: white;
   height: 100%;
-  width: 30%;
-  border-radius: 20px 0 0 20px;
+  width: 20%;
   border: none;
 }
 
 .Searchbar-icon-v2 > i {
-  padding: 10% 0;
+  padding: 20% 0;
 }
 
-.Searchbar-results {
+.Searchbar-results-v2 {
   list-style-type: none;
   text-align: left;
   border: none;
   padding: 0;
   width: 90%;
   margin: 1em auto;
-  border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0px 3px 20px 4px rgba(53, 53, 53, 0.1);
-  background-color: white;
 }
