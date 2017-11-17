@@ -1,3 +1,13 @@
+.StyleToggle-v1 {
+  height: 100vh;
+  background-color: #CDF1E4;
+}
+
+.StyleToggle-v2 {
+  height: 100vh;
+  background-color: #989898;
+}
+
 .SearchToggle-button {
   width: 10rem;
   height: 2.5em;
