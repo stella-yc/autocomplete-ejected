@@ -68,7 +68,7 @@ class SearchResult extends Component {
           ref={this.bindElement}
           href={url} >
           { this.boldMatchingText(typedValue, name) }
-          <small>{location}</small>
+          <small className={`SearchResult-small${selected ? '-selected' : ''}-${style}`}>{location}</small>
         </a>
       </li>
     );

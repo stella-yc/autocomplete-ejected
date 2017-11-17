@@ -9,11 +9,17 @@
   color: black;
 }
 
+.SearchResult-small-v1 {
+  color: #B2B2B2;
+}
+
 .SearchResult-selected-v1 {
   background-color: #2e9adf;
 }
 
-.SearchResult-selected-v1 > a {
+.SearchResult-selected-v1 > a,
+.SearchResult-small-selected-v1
+ {
   color: white;
 }
 
@@ -21,7 +27,8 @@
   background-color: #2e9adf;
 }
 
-.SearchResult-v1:hover > a {
+.SearchResult-v1:hover > a,
+.SearchResult-v1:hover small {
   color: white;
 }
 
