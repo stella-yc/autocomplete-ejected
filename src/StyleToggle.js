@@ -19,16 +19,17 @@ class StyleToggle extends Component {
   }
 
   render() {
+    const { style } = this.state;
     return (
-      <div className={`StyleToggle-${this.state.style}`}>
+      <div className={`StyleToggle-${style}`}>
         <button
           onClick={this.toggleStyle}
-          className="SearchToggle-button"
+          className={`SearchToggle-button-${style}`}
           >
           Toggle Style
         </button>
         <SearchBar
-          style={this.state.style}
+          style={style}
         />
       </div>
     );

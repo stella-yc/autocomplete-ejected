@@ -1,14 +1,29 @@
 .StyleToggle-v1 {
-  height: 100vh;
+  height: 100%;
+  min-height: 100vh;
   background-color: #CDF1E4;
 }
 
 .StyleToggle-v2 {
-  height: 100vh;
-  background-color: #989898;
+  height: 100%;
+  min-height: 100vh;
+  background-image: linear-gradient(45deg, #DEDEDE, #494949);
 }
 
-.SearchToggle-button {
+.SearchToggle-button-v1 {
+  width: 10rem;
+  height: 2.5em;
+  font-size: 1em;
+  background-color: white;
+  margin: 1em 0;
+  border-radius: 10px;
+  background-color: #2e9adf;
+  color: white;
+  border: none;
+  box-shadow: 0px 3px 20px 4px rgba(53, 53, 53, 0.2);
+}
+
+.SearchToggle-button-v2 {
   width: 10rem;
   height: 2.5em;
   font-size: 1em;
@@ -16,9 +31,15 @@
   margin: 1em 0;
   border-radius: 10px;
   background-color: white;
-  color: #F27251;
+  border: none;
+  color: #989898;
+  box-shadow: 0px 3px 20px 4px rgba(53, 53, 53, 0.1);
 }
 
-.SearchToggle-button:focus {
+.SearchToggle-button-v1:focus {
+  outline: none;
+}
+
+.SearchToggle-button-v2:focus {
   outline: none;
 }
