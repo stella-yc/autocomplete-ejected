@@ -1,29 +1,29 @@
-.SearchResult {
+.SearchResult-v1 {
   padding: 0.7em 1em;
   width: 100%;
 }
 
-.SearchResult > a {
+.SearchResult-v1 > a {
   text-decoration: none;
   color: black;
 }
 
-.SearchResult-selected {
+.SearchResult-selected-v1 {
   background-color: #2e9adf;
 }
 
-.SearchResult-selected > a {
+.SearchResult-selected-v1 > a {
   color: white;
 }
 
-.SearchResult:hover {
+.SearchResult-v1:hover {
   background-color: #2e9adf;
 }
 
-.SearchResult:hover > a {
+.SearchResult-v1:hover > a {
   color: white;
 }
 
-.SearchResult span {
+.SearchResult-v1 span {
   display: block;
 }

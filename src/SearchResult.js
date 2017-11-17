@@ -59,10 +59,10 @@ class SearchResult extends Component {
   }
 
   render () {
-    const { typedValue, result, selected, goToLink } = this.props;
+    const { typedValue, result, selected, goToLink, style } = this.props;
     const { name, url, location, id } = result;
     return (
-      <li className={`SearchResult ${selected ? 'SearchResult-selected' : ''}`}>
+      <li className={`SearchResult-${style} ${selected ? `SearchResult-selected-${style}` : ''}`}>
         <a
           ref={this.bindElement}
           href={url} >

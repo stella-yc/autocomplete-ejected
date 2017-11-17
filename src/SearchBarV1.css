@@ -1,10 +1,10 @@
-.Searchbar-component {
+.Searchbar-component-v1 {
   color: black;
   font-family: 'Montserrat', sans-serif;
   border: none;
 }
 
-.Searchbar-container {
+.Searchbar-container-v1 {
   border-radius: 50px;
   border: none;
   height: 2.5em;
@@ -18,7 +18,7 @@
   background-color: white;
 }
 
-.Searchbar-input {
+.Searchbar-input-v1 {
   width: 80%;
   height: 100%;
   font-size: 1.1em;
@@ -26,7 +26,7 @@
   margin-left: 2em;
 }
 
-.Searchbar-input:focus {
+.Searchbar-input-v1:focus {
   outline: none;
 }
 
@@ -43,7 +43,7 @@
   padding: 10% 0;
 }
 
-.Searchbar-results {
+.Searchbar-results-v1 {
   list-style-type: none;
   text-align: left;
   border: none;

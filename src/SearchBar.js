@@ -61,10 +61,10 @@ class SearchBar extends Component {
     const { selected, typedValue, results, navigateToSelected } = this.state;
     const { style } = this.props;
     return (
-      <div className={`Searchbar-component`}>
-        <div className="Searchbar-container">
+      <div className={`Searchbar-component-${style}`}>
+        <div className={`Searchbar-container-${style}`}>
           <input
-            className="Searchbar-input"
+            className={`Searchbar-input-${style}`}
             type="text"
             placeholder="Enter a college or university..."
             onChange={this.handleInputChange}
@@ -78,10 +78,11 @@ class SearchBar extends Component {
         {
           !results.length
             ? null
-            : <ul className="Searchbar-results">
+            : <ul className={`Searchbar-results-${style}`}>
               {
                 results.map((result, idx) =>
                   <SearchResult
+                    style={style}
                     goToLink={navigateToSelected}
                     selected={selected === (idx + 1)}
                     key={result.id}
