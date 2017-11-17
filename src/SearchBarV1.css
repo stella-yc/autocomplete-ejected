@@ -9,6 +9,7 @@
   border: none;
   height: 2.5em;
   width: 90%;
+  max-width: 540px;
   margin: 0 auto;
   display: flex;
   flex-direction: row;
@@ -34,15 +35,11 @@
 .Searchbar-icon-v1 {
   background-color: #53a63a;
   color: white;
-  height: 100%;
+  line-height: 2.5em;
   width: 30%;
   border-radius: 20px 0 0 20px;
   border: none;
   cursor: pointer;
-}
-
-.Searchbar-icon-v1 > i {
-  padding: 10% 0;
 }
 
 .Searchbar-results-v1 {
@@ -51,6 +48,7 @@
   border: none;
   padding: 0;
   width: 90%;
+  max-width: 540px;
   margin: 1em auto;
   border-radius: 20px;
   overflow: hidden;
