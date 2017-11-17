@@ -38,6 +38,11 @@
   width: 30%;
   border-radius: 20px 0 0 20px;
   border: none;
+  cursor: pointer;
+}
+
+.Searchbar-icon-v1:hover {
+  cursor: hand;
 }
 
 .Searchbar-icon-v1 > i {
