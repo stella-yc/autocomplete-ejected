@@ -19,6 +19,7 @@ class SearchBar extends Component {
     this.handleInputChange = this.handleInputChange.bind(this);
     this.retrieveResults = this.retrieveResults.bind(this);
     this.handleKeyDown = this.handleKeyDown.bind(this);
+    this.visitSearchResult = this.visitSearchResult.bind(this);
   }
 
   handleInputChange (event) {
@@ -53,6 +54,17 @@ class SearchBar extends Component {
     }
     // if enter key is pressed
     if (event.keyCode === 13) {
+      this.visitSearchResult();
+    }
+  }
+
+  visitSearchResult () {
+    if (this.state.selected === 0) {
+      this.setState({
+        navigateToSelected: true,
+        selected: 1
+      });
+    } else {
       this.setState({navigateToSelected: true});
     }
   }
@@ -71,7 +83,10 @@ class SearchBar extends Component {
             value={typedValue}
             onKeyDown={this.handleKeyDown}
           />
-          <span className={`Searchbar-icon-${style}`}>
+          <span
+            className={`Searchbar-icon-${style}`}
+            onClick={this.visitSearchResult}
+          >
             <i className="fa fa-search" aria-hidden="true"></i>
           </span>
         </div>
