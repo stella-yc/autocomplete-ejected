@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="Searchbar-component-v1"
+>
+  <div
+    className="Searchbar-container-v1"
+  >
+    <input
+      className="Searchbar-input-v1"
+      onChange={[Function]}
+      onKeyDown={[Function]}
+      placeholder="Enter a college or university..."
+      type="text"
+      value=""
+    />
+    <span
+      className="Searchbar-icon-v1"
+      onClick={[Function]}
+    >
+      <i
+        aria-hidden="true"
+        className="fa fa-search"
+      />
+    </span>
+  </div>
+</div>
+`;
