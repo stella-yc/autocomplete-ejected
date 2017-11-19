@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types'
+
+import SearchResult from './SearchResult';
 import './SearchBarV1.css';
 import './SearchBarV2.css';
-
-import promiseJSONP from './utils/JSONPUtil';
-import generateSearchUrl from './utils/searchUrl';
-import { firstTenElements, uniqueVals } from './utils/arrayUtil';
-import SearchResult from './SearchResult';
 
 class SearchBar extends Component {
   constructor(props) {
@@ -28,14 +26,8 @@ class SearchBar extends Component {
   }
 
   retrieveResults () {
-    const api = generateSearchUrl(this.state.typedValue);
-    promiseJSONP(api)
-      .then(data => {
-        const uniqueResults = uniqueVals(data.results)
-        const results = firstTenElements(uniqueResults);
-        this.setState({results});
-      })
-      .catch(err => console.log(err));
+    this.props.retrieveSearchResults(this.state.typedValue)
+      .then(results => this.setState({ results }));
   }
 
   handleKeyDown (event) {
@@ -71,7 +63,11 @@ class SearchBar extends Component {
 
   render () {
     const { selected, typedValue, results, navigateToSelected } = this.state;
-    const { style } = this.props;
+    let { style } = this.props;
+    if (!style) {
+      style = 'v1';
+    }
+
     return (
       <div className={`Searchbar-component-${style}`}>
         <div className={`Searchbar-container-${style}`}>
@@ -114,3 +110,8 @@ class SearchBar extends Component {
 }
 
 export default SearchBar;
+
+SearchBar.propTypes = {
+  style: PropTypes.oneOf(['v1', 'v2']),
+  retrieveSearchResults: PropTypes.func.isRequired
+};

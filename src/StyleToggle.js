@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+
 import SearchBar from './SearchBar';
+import retrieveSearchResults from './async-request/searchQueryAPI';
 import './StyleToggle.css';
 
 class StyleToggle extends Component {
@@ -30,6 +32,7 @@ class StyleToggle extends Component {
         </button>
         <SearchBar
           style={style}
+          retrieveSearchResults={retrieveSearchResults}
         />
       </div>
     );

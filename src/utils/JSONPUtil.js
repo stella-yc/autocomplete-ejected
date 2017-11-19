@@ -1,6 +1,6 @@
 import JSONP from 'jsonp';
 
-const promiseJSONP = (url) =>
+export const promiseJSONP = (url) =>
   new Promise((resolve, reject) => {
     JSONP(url, (err, data) => {
       if (err) {
@@ -10,5 +10,3 @@ const promiseJSONP = (url) =>
       }
     });
 });
-
-export default promiseJSONP;
