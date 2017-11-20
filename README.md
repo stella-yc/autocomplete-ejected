@@ -1,7 +1,7 @@
 # autocomplete
 
 This is a search bar that suggests links based on the user's input.
-Built using React and create-react-app.
+Built using React and [create-react-app](https://github.com/facebookincubator/create-react-app).
 Uses JSONP to bypass the cross-domain policies in web browsers.
 (You are not allowed to make AJAX requests to a web page perceived to be on a different server by the browser.)
 
