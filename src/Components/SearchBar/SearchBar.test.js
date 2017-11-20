@@ -4,8 +4,7 @@ import renderer from 'react-test-renderer';
 import { shallow, mount } from 'enzyme';
 
 import SearchBar from './SearchBar';
-import retrieveSearchResults from './async-request/searchQueryAPI';
-import SearchResult from './SearchResult';
+import SearchResult from '../SearchResult/SearchResult';
 
 describe('<SearchBar /> Component', () => {
 

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types'
 
-import SearchResult from './SearchResult';
+import SearchResult from '../SearchResult';
 import './SearchBarV1.css';
 import './SearchBarV2.css';
 
